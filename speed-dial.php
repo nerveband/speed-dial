@@ -2,12 +2,12 @@
 /**
  * Plugin Name: Speed Dial
  * Plugin URI: https://github.com/nerveband/speed-dial
- * Description: Nokia-style dialer that connects numbers to websites. Experience the nostalgic Nokia 3310 interface while navigating to your favorite sites.
+ * Description: Nokia-style dialer that connects numbers to websites. Experience the nostalgic Nokia 3310 interface while navigating to your favorite sites. Inspired by Internet Phone Book's Dial-a-Site.
  * Version: 1.0.0
- * Author: Nerveband
- * Author URI: https://github.com/nerveband
- * License: GPL v2 or later
- * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Author: Ashraf Ali
+ * Author URI: https://ashrafali.net
+ * License: MIT
+ * License URI: https://opensource.org/licenses/MIT
  * Text Domain: speed-dial
  * Domain Path: /languages
  * Requires at least: 5.8

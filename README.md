@@ -3,9 +3,13 @@
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
 ![WordPress](https://img.shields.io/badge/WordPress-5.8%2B-green.svg)
 ![PHP](https://img.shields.io/badge/PHP-7.4%2B-purple.svg)
-![License](https://img.shields.io/badge/license-GPL--2.0%2B-red.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
 
 A nostalgic Nokia 3310-style phone dialer for WordPress that connects numbers to websites. Transform your site navigation into a retro mobile phone experience complete with DTMF tones and authentic Nokia interface.
+
+**By [Ashraf Ali](https://ashrafali.net)**
+
+*Inspired by Internet Phone Book's [Dial-a-Site](https://internetphonebook.net/)*
 
 ## 🎯 Features
 
@@ -19,6 +23,14 @@ A nostalgic Nokia 3310-style phone dialer for WordPress that connects numbers to
 - **Responsive Design**: Works on all devices and screen sizes
 - **Accessibility**: Full keyboard support and ARIA labels
 - **Internationalization**: Translation-ready with .pot file included
+
+## 🎮 How It Works
+
+1. **Admin Setup**: Add number-to-URL mappings in WordPress admin (e.g., "411" → "https://example.com")
+2. **User Interaction**: Visitors see the Nokia phone interface on your page
+3. **Dialing**: Users press number keys to dial (with authentic DTMF sounds)
+4. **Connection**: Press "Call" to look up the number and get redirected to the mapped website
+5. **Navigation**: Automatically redirects or shows a "Visit" button based on settings
 
 ## 📦 Installation
 
@@ -174,43 +186,50 @@ jQuery.get(ajaxurl, {
 - MySQL 5.6+ / MariaDB 10.1+
 - Modern browser with JavaScript enabled
 
-### Building from Source
+### Build Steps
 
 ```bash
 # Clone the repository
 git clone https://github.com/nerveband/speed-dial.git
 cd speed-dial
 
-# Install dependencies (if any)
-npm install
+# No build required - plugin is ready to use!
+# All assets are pre-built and included
 
-# Build assets
-npm run build
-
-# Create distribution package
+# To create a distribution package:
+chmod +x package.sh
 ./package.sh
+
+# Or manually:
+zip -r speed-dial.zip . -x "*.git*" ".DS_Store" "*.distignore" "package.sh" "dist/*"
 ```
 
-### File Structure
+### Development Setup
+
+1. Clone into your WordPress plugins directory:
+   ```bash
+   cd wp-content/plugins/
+   git clone https://github.com/nerveband/speed-dial.git
+   ```
+
+2. Activate the plugin in WordPress admin
+
+3. Start developing! The plugin uses:
+   - Vanilla JavaScript (no build step required)
+   - WebAudio API for sound generation
+   - Standard WordPress APIs
+
+### Project Structure
 
 ```
 speed-dial/
-├── speed-dial.php          # Main plugin file
-├── inc/                     # PHP classes
-│   ├── class-admin.php      # Admin interface
-│   ├── class-assets.php     # Asset management
-│   ├── class-model.php      # Database operations
-│   ├── class-render.php     # Frontend rendering
-│   ├── class-rest.php       # REST API endpoints
-│   └── helpers.php          # Helper functions
-├── assets/                  # Frontend assets
-│   ├── css/                 # Stylesheets
-│   ├── js/                  # JavaScript files
-│   └── img/                 # Images
-├── block/                   # Gutenberg block
-├── languages/               # Translation files
-└── uninstall.php           # Clean uninstall handler
+├── speed-dial.php       # Main plugin file
+├── inc/                 # PHP classes
+├── assets/              # CSS, JS, images
+├── block/               # Gutenberg block
+└── languages/           # Translations
 ```
+
 
 ## 🌍 Internationalization
 
@@ -266,20 +285,20 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📄 License
 
-This project is licensed under the GPL v2 or later - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 👏 Credits
 
-- Nokia 3310 design inspiration
-- WebAudio API for DTMF generation
-- VT323 font by Peter Hull
-- WordPress Plugin Boilerplate
+- **Author**: [Ashraf Ali](https://ashrafali.net)
+- **Inspiration**: Internet Phone Book's [Dial-a-Site](https://internetphonebook.net/)
+- **Design**: Nokia 3310 classic phone interface
+- **Font**: VT323 by Peter Hull
+- **Sound**: WebAudio API for DTMF tone generation
 
 ## 📞 Support
 
 - **Issues**: [GitHub Issues](https://github.com/nerveband/speed-dial/issues)
-- **Wiki**: [GitHub Wiki](https://github.com/nerveband/speed-dial/wiki)
-- **Email**: support@example.com
+- **Author**: [https://ashrafali.net](https://ashrafali.net)
 
 ## 🔄 Changelog
 
@@ -293,4 +312,4 @@ This project is licensed under the GPL v2 or later - see the [LICENSE](LICENSE) 
 
 ---
 
-Made with ❤️ by [Nerveband](https://github.com/nerveband)
+Made with ❤️ by [Ashraf Ali](https://ashrafali.net)

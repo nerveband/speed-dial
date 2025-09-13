@@ -1,21 +1,23 @@
 === Speed Dial ===
-Contributors: nerveband
-Donate link: https://github.com/sponsors/nerveband
+Contributors: ashrafali
+Donate link: https://ashrafali.net
 Tags: navigation, nokia, phone, dialer, retro, shortcode, block
 Requires at least: 5.8
 Tested up to: 6.4
 Requires PHP: 7.4
 Stable tag: 1.0.0
-License: GPLv2 or later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
+License: MIT
+License URI: https://opensource.org/licenses/MIT
 
-Transform your WordPress navigation into a nostalgic Nokia 3310 phone dialer that connects numbers to websites.
+Transform your WordPress navigation into a nostalgic Nokia 3310 phone dialer that connects numbers to websites. Inspired by Internet Phone Book's Dial-a-Site.
 
 == Description ==
 
 **Speed Dial** brings the nostalgic Nokia 3310 experience to WordPress! Create an interactive phone dialer that connects phone numbers to website URLs, complete with authentic DTMF tones and retro interface design.
 
 Perfect for creative navigation, interactive directories, or adding a unique retro touch to your website.
+
+Inspired by Internet Phone Book's [Dial-a-Site](https://internetphonebook.net/), this plugin recreates the classic experience of dialing numbers to navigate websites.
 
 = Key Features =
 
