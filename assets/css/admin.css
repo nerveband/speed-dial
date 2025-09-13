@@ -1,0 +1,138 @@
+/**
+ * Speed Dial Admin Styles
+ */
+
+/* Admin page wrapper */
+.speed-dial-admin {
+	max-width: 1200px;
+}
+
+/* Status badges */
+.sd-status {
+	display: inline-block;
+	padding: 3px 8px;
+	border-radius: 3px;
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.sd-status-active {
+	background: #d4f4dd;
+	color: #00a32a;
+}
+
+.sd-status-inactive {
+	background: #fef1f1;
+	color: #d63638;
+}
+
+/* Import/Export Cards */
+.sd-import-export {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 20px;
+	margin-top: 20px;
+}
+
+.sd-import-export .card {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	padding: 20px;
+}
+
+.sd-import-export .card h2 {
+	margin-top: 0;
+	font-size: 1.3em;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 10px;
+}
+
+/* Form enhancements */
+.form-table .required {
+	color: #d63638;
+}
+
+.form-table code {
+	background: #f0f0f1;
+	padding: 2px 5px;
+	border-radius: 3px;
+}
+
+/* List table enhancements */
+.wp-list-table .column-number {
+	width: 120px;
+}
+
+.wp-list-table .column-id {
+	width: 60px;
+}
+
+.wp-list-table .column-is_active {
+	width: 80px;
+}
+
+.wp-list-table .column-updated_at {
+	width: 120px;
+}
+
+/* CSV format preview */
+pre {
+	background: #f6f7f7;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+	padding: 12px;
+	overflow-x: auto;
+	font-family: Consolas, Monaco, monospace;
+	font-size: 13px;
+	line-height: 1.5;
+}
+
+/* Button styles */
+.button-delete {
+	color: #d63638;
+	border-color: #d63638;
+}
+
+.button-delete:hover {
+	background: #d63638;
+	color: #fff;
+	border-color: #d63638;
+}
+
+/* Admin notices enhancements */
+.notice.is-dismissible {
+	padding-right: 38px;
+}
+
+/* Settings page */
+.sd-settings-section {
+	margin-bottom: 30px;
+}
+
+.sd-settings-section h2 {
+	border-bottom: 1px solid #c3c4c7;
+	padding-bottom: 5px;
+}
+
+/* Phone preview in admin */
+.sd-admin-preview {
+	max-width: 320px;
+	margin: 20px 0;
+	padding: 20px;
+	background: #f0f0f1;
+	border-radius: 4px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 782px) {
+	.sd-import-export {
+		grid-template-columns: 1fr;
+	}
+	
+	.wp-list-table .column-url,
+	.wp-list-table .column-updated_at {
+		display: none;
+	}
+}

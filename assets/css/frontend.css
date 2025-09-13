@@ -1,0 +1,313 @@
+/**
+ * Speed Dial Frontend Styles
+ * Base styles for the phone dialer interface
+ */
+
+/* Container */
+.sd-phone {
+	--sd-primary: #333;
+	--sd-secondary: #666;
+	--sd-accent: #0073aa;
+	--sd-bg: #fff;
+	--sd-border: #ddd;
+	--sd-text: #333;
+	--sd-shadow: rgba(0, 0, 0, 0.1);
+
+	position: relative;
+	max-width: 320px;
+	margin: 2rem auto;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+/* Shell */
+.sd-shell {
+	position: relative;
+	background: var(--sd-bg);
+	border: 1px solid var(--sd-border);
+	border-radius: 8px;
+	padding: 1rem;
+	box-shadow: 0 2px 4px var(--sd-shadow);
+}
+
+/* Speaker */
+.sd-speaker {
+	display: flex;
+	justify-content: center;
+	gap: 4px;
+	margin-bottom: 1rem;
+	padding: 0.5rem;
+}
+
+.sd-speaker-hole {
+	width: 6px;
+	height: 6px;
+	background: var(--sd-secondary);
+	border-radius: 50%;
+}
+
+/* Screen */
+.sd-screen {
+	position: relative;
+	background: #f5f5f5;
+	border: 2px solid var(--sd-border);
+	border-radius: 4px;
+	padding: 1rem;
+	min-height: 120px;
+	margin-bottom: 1rem;
+	overflow: hidden;
+}
+
+.sd-readout {
+	font-size: 1.5rem;
+	font-weight: 600;
+	text-align: center;
+	min-height: 2em;
+	line-height: 2em;
+	word-break: break-all;
+	color: var(--sd-text);
+}
+
+.sd-cursor {
+	animation: sd-blink 1s infinite;
+}
+
+@keyframes sd-blink {
+	0%, 50% { opacity: 1; }
+	51%, 100% { opacity: 0; }
+}
+
+/* Overlay */
+.sd-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(255, 255, 255, 0.95);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	z-index: 10;
+}
+
+.sd-spinner {
+	width: 40px;
+	height: 40px;
+	border: 3px solid var(--sd-border);
+	border-top-color: var(--sd-accent);
+	border-radius: 50%;
+	animation: sd-spin 1s linear infinite;
+	margin-bottom: 1rem;
+}
+
+@keyframes sd-spin {
+	to { transform: rotate(360deg); }
+}
+
+.sd-message {
+	font-size: 0.9rem;
+	color: var(--sd-secondary);
+	text-align: center;
+}
+
+/* Result */
+.sd-result {
+	padding: 1rem;
+	text-align: center;
+}
+
+.sd-result-title {
+	font-size: 1.2rem;
+	font-weight: 600;
+	margin-bottom: 0.5rem;
+	color: var(--sd-text);
+}
+
+.sd-result-url {
+	display: block;
+	font-size: 0.85rem;
+	color: var(--sd-accent);
+	text-decoration: none;
+	margin-bottom: 1rem;
+	word-break: break-all;
+}
+
+.sd-result-url:hover {
+	text-decoration: underline;
+}
+
+.sd-result-visit {
+	background: var(--sd-accent);
+	color: white;
+	border: none;
+	padding: 0.5rem 1.5rem;
+	border-radius: 4px;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background 0.2s;
+}
+
+.sd-result-visit:hover {
+	background: #005a87;
+}
+
+/* Soft Keys */
+.sd-softkeys {
+	display: flex;
+	gap: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+.sd-soft {
+	flex: 1;
+	padding: 0.75rem;
+	background: var(--sd-bg);
+	border: 1px solid var(--sd-border);
+	border-radius: 4px;
+	font-size: 0.9rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition: all 0.2s;
+	color: var(--sd-text);
+}
+
+.sd-soft:hover {
+	background: #f0f0f0;
+}
+
+.sd-soft:active {
+	transform: scale(0.95);
+}
+
+.sd-soft.sd-call {
+	background: var(--sd-accent);
+	color: white;
+	border-color: var(--sd-accent);
+}
+
+.sd-soft.sd-call:hover {
+	background: #005a87;
+}
+
+/* Keypad */
+.sd-keypad {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 0.5rem;
+}
+
+.sd-key {
+	position: relative;
+	padding: 1rem;
+	background: var(--sd-bg);
+	border: 1px solid var(--sd-border);
+	border-radius: 50%;
+	aspect-ratio: 1;
+	cursor: pointer;
+	transition: all 0.2s;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.sd-key:hover {
+	background: #f0f0f0;
+	transform: scale(1.05);
+}
+
+.sd-key:active {
+	transform: scale(0.95);
+	background: #e0e0e0;
+}
+
+.sd-key-main {
+	font-size: 1.5rem;
+	font-weight: 600;
+	line-height: 1;
+	color: var(--sd-text);
+}
+
+.sd-key-sub {
+	font-size: 0.65rem;
+	color: var(--sd-secondary);
+	margin-top: 0.25rem;
+	letter-spacing: 1px;
+}
+
+/* Hidden Input */
+.sd-hidden-input {
+	position: absolute;
+	left: -9999px;
+	width: 1px;
+	height: 1px;
+	opacity: 0;
+	pointer-events: none;
+}
+
+/* Status (Screen Reader) */
+.sd-status {
+	position: absolute;
+	left: -9999px;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+/* Focus Styles */
+.sd-key:focus,
+.sd-soft:focus,
+.sd-result-visit:focus {
+	outline: 2px solid var(--sd-accent);
+	outline-offset: 2px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+	.sd-phone {
+		max-width: 100%;
+		margin: 1rem;
+	}
+
+	.sd-shell {
+		padding: 0.75rem;
+	}
+
+	.sd-key {
+		padding: 0.75rem;
+	}
+
+	.sd-key-main {
+		font-size: 1.25rem;
+	}
+}
+
+/* Print Styles */
+@media print {
+	.sd-phone {
+		display: none;
+	}
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+	.sd-spinner,
+	.sd-cursor {
+		animation: none;
+	}
+
+	.sd-key,
+	.sd-soft {
+		transition: none;
+	}
+}

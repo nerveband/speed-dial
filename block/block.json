@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "speed-dial/phone",
+	"version": "1.0.0",
+	"title": "Speed Dial",
+	"category": "widgets",
+	"icon": "phone",
+	"description": "Nokia-style phone dialer that connects numbers to websites",
+	"keywords": ["phone", "dialer", "nokia", "navigation", "speed dial"],
+	"supports": {
+		"html": false,
+		"align": ["center", "wide"],
+		"className": true
+	},
+	"attributes": {
+		"digits": {
+			"type": "string",
+			"default": ""
+		},
+		"auto_focus": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"textdomain": "speed-dial",
+	"editorScript": "file:./edit.js",
+	"style": "file:./style.css",
+	"render": "file:../inc/class-render.php"
+}

@@ -1,0 +1,106 @@
+# Development files
+.git
+.gitignore
+.gitattributes
+.distignore
+.editorconfig
+.eslintrc
+.eslintignore
+.prettierrc
+.prettierignore
+
+# Build and CI files
+.travis.yml
+.gitlab-ci.yml
+circle.yml
+bitbucket-pipelines.yml
+.github
+Gruntfile.js
+gulpfile.js
+webpack.config.js
+
+# Package files
+package.json
+package-lock.json
+composer.json
+composer.lock
+yarn.lock
+
+# Dependency directories
+node_modules/
+vendor/
+bower_components/
+
+# Build directories
+build/
+dist/
+.cache/
+
+# Development tools
+package.sh
+build.sh
+deploy.sh
+Makefile
+
+# Test files
+tests/
+test/
+spec/
+phpunit.xml
+phpunit.xml.dist
+.phpunit.result.cache
+codeception.yml
+behat.yml
+
+# Documentation source
+docs/
+documentation/
+CONTRIBUTING.md
+CODE_OF_CONDUCT.md
+CHANGELOG.md
+
+# IDE files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.project
+.buildpath
+.settings/
+nbproject/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+.Spotlight-V100
+.Trashes
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+*.bak
+*.log
+*.sql
+*.sqlite
+
+# Development assets
+*.map
+*.scss
+*.sass
+*.less
+*.ts
+*.tsx
+*.coffee
+assets/src/
+src/
+
+# Other files
+TODO.md
+NOTES.md
+*.zip
+*.tar.gz
+*.tgz

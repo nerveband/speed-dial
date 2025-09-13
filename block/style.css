@@ -1,0 +1,30 @@
+/**
+ * Speed Dial Block Styles
+ */
+
+/* Block alignment */
+.wp-block-speed-dial-phone {
+	margin: 2rem auto;
+}
+
+.wp-block-speed-dial-phone.aligncenter {
+	text-align: center;
+}
+
+.wp-block-speed-dial-phone.alignwide {
+	max-width: 100%;
+}
+
+/* Editor preview styles */
+.wp-block-speed-dial-phone .components-placeholder {
+	min-height: 200px;
+}
+
+.wp-block-speed-dial-phone .components-placeholder__label {
+	font-size: 1.2em;
+}
+
+/* Ensure proper display in editor */
+.editor-styles-wrapper .sd-phone {
+	margin: 0 auto;
+}

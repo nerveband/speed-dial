@@ -1,0 +1,389 @@
+/**
+ * Nokia 3310 Theme for Speed Dial
+ * Authentic recreation of the classic Nokia 3310 interface
+ */
+
+/* Import pixel font */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+/* Nokia Theme Variables */
+.sd-theme-nokia-3310 {
+	--sd-nokia-shell: #2a3439;
+	--sd-nokia-shell-light: #3a454b;
+	--sd-nokia-screen: #b7d989;
+	--sd-nokia-screen-dark: #8fa860;
+	--sd-nokia-text: #2a3520;
+	--sd-nokia-key: #4a5459;
+	--sd-nokia-key-text: #ffffff;
+	--sd-nokia-accent: #ff6b00;
+}
+
+/* Phone Shell */
+.sd-theme-nokia-3310 .sd-shell {
+	background: linear-gradient(135deg, var(--sd-nokia-shell) 0%, var(--sd-nokia-shell-light) 100%);
+	border: none;
+	border-radius: 25px 25px 20px 20px;
+	padding: 1.5rem 1rem;
+	box-shadow: 
+		0 10px 30px rgba(0, 0, 0, 0.3),
+		inset 0 1px 0 rgba(255, 255, 255, 0.1),
+		inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+	position: relative;
+	overflow: visible;
+}
+
+/* Antenna bump */
+.sd-theme-nokia-3310 .sd-shell::before {
+	content: '';
+	position: absolute;
+	top: -10px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 60px;
+	height: 15px;
+	background: inherit;
+	border-radius: 10px 10px 0 0;
+	box-shadow: 
+		0 -2px 5px rgba(0, 0, 0, 0.2),
+		inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Nokia Logo */
+.sd-theme-nokia-3310 .sd-shell::after {
+	content: 'NOKIA';
+	position: absolute;
+	top: 1rem;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 0.75rem;
+	font-weight: bold;
+	letter-spacing: 2px;
+	color: rgba(255, 255, 255, 0.6);
+	font-family: -apple-system, sans-serif;
+}
+
+/* Speaker Grille */
+.sd-theme-nokia-3310 .sd-speaker {
+	background: linear-gradient(
+		90deg,
+		transparent 30%,
+		rgba(0, 0, 0, 0.3) 30%,
+		rgba(0, 0, 0, 0.3) 32%,
+		transparent 32%,
+		transparent 48%,
+		rgba(0, 0, 0, 0.3) 48%,
+		rgba(0, 0, 0, 0.3) 50%,
+		transparent 50%,
+		transparent 68%,
+		rgba(0, 0, 0, 0.3) 68%,
+		rgba(0, 0, 0, 0.3) 70%,
+		transparent 70%
+	);
+	height: 20px;
+	margin: 2.5rem 2rem 1rem;
+	padding: 0;
+	border-radius: 10px;
+}
+
+.sd-theme-nokia-3310 .sd-speaker-hole {
+	display: none;
+}
+
+/* LCD Screen */
+.sd-theme-nokia-3310 .sd-screen {
+	background: var(--sd-nokia-screen);
+	border: 3px solid #2a2a2a;
+	border-radius: 8px;
+	padding: 1rem;
+	min-height: 140px;
+	margin: 1rem 0.5rem 1.5rem;
+	box-shadow: 
+		inset 0 2px 5px rgba(0, 0, 0, 0.5),
+		inset 0 -1px 0 rgba(255, 255, 255, 0.2);
+	position: relative;
+	overflow: hidden;
+	font-family: 'VT323', monospace;
+}
+
+/* LCD Scanlines Effect */
+.sd-theme-nokia-3310 .sd-screen::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: repeating-linear-gradient(
+		0deg,
+		transparent,
+		transparent 2px,
+		rgba(0, 0, 0, 0.03) 2px,
+		rgba(0, 0, 0, 0.03) 4px
+	);
+	pointer-events: none;
+	z-index: 1;
+}
+
+/* LCD Pixel Grid Effect */
+.sd-theme-nokia-3310 .sd-screen::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: repeating-linear-gradient(
+		90deg,
+		transparent,
+		transparent 2px,
+		rgba(0, 0, 0, 0.02) 2px,
+		rgba(0, 0, 0, 0.02) 4px
+	);
+	pointer-events: none;
+	z-index: 1;
+}
+
+/* Readout with pixel font */
+.sd-theme-nokia-3310 .sd-readout {
+	font-family: 'VT323', monospace;
+	font-size: 2rem;
+	color: var(--sd-nokia-text);
+	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+	letter-spacing: 2px;
+	position: relative;
+	z-index: 2;
+}
+
+/* Blinking cursor */
+.sd-theme-nokia-3310 .sd-cursor {
+	display: inline-block;
+	width: 15px;
+	height: 25px;
+	background: var(--sd-nokia-text);
+	vertical-align: text-bottom;
+	margin-left: 2px;
+	animation: nokia-blink 1s step-start infinite;
+}
+
+@keyframes nokia-blink {
+	0%, 50% { opacity: 1; }
+	51%, 100% { opacity: 0; }
+}
+
+/* Soft Keys */
+.sd-theme-nokia-3310 .sd-softkeys {
+	display: flex;
+	gap: 3rem;
+	margin: 0 1rem 1.5rem;
+	justify-content: center;
+}
+
+.sd-theme-nokia-3310 .sd-soft {
+	background: linear-gradient(135deg, #5a656b 0%, #4a555b 100%);
+	border: none;
+	border-radius: 15px;
+	color: white;
+	font-size: 0.8rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 0.6rem 1.2rem;
+	box-shadow: 
+		0 3px 0 #2a3439,
+		0 4px 6px rgba(0, 0, 0, 0.3),
+		inset 0 1px 0 rgba(255, 255, 255, 0.2);
+	transition: all 0.1s;
+	font-family: -apple-system, sans-serif;
+}
+
+.sd-theme-nokia-3310 .sd-soft:active {
+	transform: translateY(2px);
+	box-shadow: 
+		0 1px 0 #2a3439,
+		0 2px 3px rgba(0, 0, 0, 0.3),
+		inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.sd-theme-nokia-3310 .sd-soft.sd-call {
+	background: linear-gradient(135deg, #6a7f4b 0%, #5a6f3b 100%);
+}
+
+/* Keypad */
+.sd-theme-nokia-3310 .sd-keypad {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 0.75rem;
+	padding: 0 1rem 1rem;
+}
+
+.sd-theme-nokia-3310 .sd-key {
+	background: linear-gradient(135deg, var(--sd-nokia-key) 0%, #3a4449 100%);
+	border: none;
+	border-radius: 50%;
+	color: var(--sd-nokia-key-text);
+	box-shadow: 
+		0 3px 0 #1a2429,
+		0 4px 8px rgba(0, 0, 0, 0.4),
+		inset 0 1px 0 rgba(255, 255, 255, 0.2),
+		inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+	font-family: -apple-system, sans-serif;
+	transition: all 0.1s;
+	position: relative;
+	overflow: hidden;
+}
+
+/* Key shine effect */
+.sd-theme-nokia-3310 .sd-key::before {
+	content: '';
+	position: absolute;
+	top: 5%;
+	left: 10%;
+	right: 10%;
+	height: 30%;
+	background: linear-gradient(
+		180deg,
+		rgba(255, 255, 255, 0.3) 0%,
+		transparent 100%
+	);
+	border-radius: 50%;
+	pointer-events: none;
+}
+
+.sd-theme-nokia-3310 .sd-key:hover {
+	transform: scale(1.05);
+	background: linear-gradient(135deg, #5a656b 0%, #4a555b 100%);
+}
+
+.sd-theme-nokia-3310 .sd-key:active {
+	transform: translateY(2px) scale(0.98);
+	box-shadow: 
+		0 1px 0 #1a2429,
+		0 2px 4px rgba(0, 0, 0, 0.4),
+		inset 0 1px 0 rgba(255, 255, 255, 0.2),
+		inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.sd-theme-nokia-3310 .sd-key-main {
+	font-size: 1.4rem;
+	font-weight: bold;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.sd-theme-nokia-3310 .sd-key-sub {
+	font-size: 0.55rem;
+	opacity: 0.8;
+	letter-spacing: 0.5px;
+	margin-top: 0.15rem;
+}
+
+/* Overlay */
+.sd-theme-nokia-3310 .sd-overlay {
+	background: var(--sd-nokia-screen);
+	z-index: 20;
+}
+
+.sd-theme-nokia-3310 .sd-spinner {
+	border-color: var(--sd-nokia-screen-dark);
+	border-top-color: var(--sd-nokia-text);
+	width: 30px;
+	height: 30px;
+}
+
+.sd-theme-nokia-3310 .sd-message {
+	font-family: 'VT323', monospace;
+	font-size: 1.2rem;
+	color: var(--sd-nokia-text);
+	letter-spacing: 1px;
+}
+
+/* Result */
+.sd-theme-nokia-3310 .sd-result {
+	font-family: 'VT323', monospace;
+	position: relative;
+	z-index: 2;
+}
+
+.sd-theme-nokia-3310 .sd-result-title {
+	color: var(--sd-nokia-text);
+	font-size: 1.5rem;
+	letter-spacing: 1px;
+}
+
+.sd-theme-nokia-3310 .sd-result-url {
+	color: var(--sd-nokia-text);
+	opacity: 0.8;
+	font-size: 1rem;
+}
+
+.sd-theme-nokia-3310 .sd-result-visit {
+	background: var(--sd-nokia-text);
+	color: var(--sd-nokia-screen);
+	border: none;
+	border-radius: 4px;
+	padding: 0.5rem 1.5rem;
+	font-family: 'VT323', monospace;
+	font-size: 1.2rem;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
+	transition: all 0.1s;
+}
+
+.sd-theme-nokia-3310 .sd-result-visit:hover {
+	transform: scale(1.05);
+}
+
+.sd-theme-nokia-3310 .sd-result-visit:active {
+	transform: translateY(1px);
+	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Not found / Error messages */
+.sd-theme-nokia-3310 .sd-not-found,
+.sd-theme-nokia-3310 .sd-error {
+	font-family: 'VT323', monospace;
+	font-size: 1.3rem;
+	color: var(--sd-nokia-text);
+	letter-spacing: 1px;
+	position: relative;
+	z-index: 2;
+}
+
+/* Focus styles */
+.sd-theme-nokia-3310 .sd-key:focus,
+.sd-theme-nokia-3310 .sd-soft:focus,
+.sd-theme-nokia-3310 .sd-result-visit:focus {
+	outline: 2px solid var(--sd-nokia-accent);
+	outline-offset: 3px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 360px) {
+	.sd-theme-nokia-3310 .sd-shell {
+		border-radius: 20px 20px 15px 15px;
+		padding: 1rem 0.75rem;
+	}
+	
+	.sd-theme-nokia-3310 .sd-screen {
+		margin: 0.75rem 0.25rem 1rem;
+		min-height: 120px;
+	}
+	
+	.sd-theme-nokia-3310 .sd-keypad {
+		gap: 0.5rem;
+		padding: 0 0.5rem 0.75rem;
+	}
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+	.sd-theme-nokia-3310 .sd-screen {
+		background: #d4f4a4;
+	}
+	
+	.sd-theme-nokia-3310 .sd-readout,
+	.sd-theme-nokia-3310 .sd-message,
+	.sd-theme-nokia-3310 .sd-result-title {
+		color: #000000;
+		font-weight: bold;
+	}
+}
